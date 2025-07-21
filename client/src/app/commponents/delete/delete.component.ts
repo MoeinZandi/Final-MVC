@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-delete',
+  standalone: true,
   imports: [
     MatButtonModule
   ],

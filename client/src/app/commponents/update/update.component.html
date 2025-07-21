@@ -11,6 +11,11 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input type="Username" [formControl]="Usernamectrl" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
             <mat-label>Confirm Password</mat-label>
             <input type="password" [formControl]="ConfirmPasswordCtrl" matInput>
         </mat-form-field>

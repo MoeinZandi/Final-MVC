@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-register',
+  standalone: true,
   imports: [RouterLink,
     MatFormFieldModule, MatButtonModule, MatInputModule,
     FormsModule, ReactiveFormsModule,],
@@ -33,6 +34,10 @@ export class RegisterComponent {
     return this.registerFg.get('emailCtrl') as FormControl;
   }
 
+  get Usernamectrl(): FormControl {
+    return this.Usernamectrl.get('UsernameCtrl') as FormControl;
+  }
+
   get PasswordCtrl(): FormControl {
     return this.registerFg.get('passwordCtrl') as FormControl;
   }
@@ -45,6 +50,7 @@ export class RegisterComponent {
   register(): void {
     let userInput: AppUser = {
       email: this.EmailCtrl.value,
+      username: this.Usernamectrl.value,
       password: this.PasswordCtrl.value,
       confirmPassword: this.ConfirmPasswordCtrl.value
     }
