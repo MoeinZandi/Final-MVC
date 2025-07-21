@@ -27,6 +27,7 @@ export class UpdateComponent {
   //#region fG
   updateFg = this._fB.group({
     emailCtrl: [''],
+    userNameCtrl: [''],
     passwordCtrl: [''],
     confirmPasswordCtrl: ['']
   })
@@ -35,8 +36,8 @@ export class UpdateComponent {
     return this.updateFg.get('emailCtrl') as FormControl;
   }
 
-  get Usernamectrl(): FormControl {
-    return this.Usernamectrl.get('UsernameCtrl') as FormControl;
+  get UserNamectrl(): FormControl {
+    return this.updateFg.get('userNameCtrl') as FormControl;
   }
 
   get PasswordCtrl(): FormControl {
@@ -51,7 +52,7 @@ export class UpdateComponent {
   update(): void {
     let userInput: AppUser = {
       email: this.EmailCtrl.value,
-      username: this.Usernamectrl.value,
+      username: this.UserNamectrl.value,
       password: this.PasswordCtrl.value,
       confirmPassword: this.ConfirmPasswordCtrl.value
     }

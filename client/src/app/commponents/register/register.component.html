@@ -9,16 +9,19 @@
             @else if (EmailCtrl.hasError("email")) {
             <mat-error>Enter valid email</mat-error>
             }
-            @else if(EmailCtrl.hasError("mixlength")) {
+            @else if(EmailCtrl.hasError("minlength")) {
             <mat-error>Max 50 characters.</mat-error>
             }
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Username</mat-label>
-            <input type="Username" [formControl]="Usernamectrl" matInput>
-            @if (Usernamectrl.hasError("required")) {
+            <input type="Username" [formControl]="UserNamectrl" matInput>
+            @if (UserNamectrl.hasError("required")) {
             <mat-error>This field is required.</mat-error>
+            }
+            @else if (UserNamectrl.hasError("minlength")) {
+                <mat-error>Max 50 characters.</mat-error>
             }
         </mat-form-field>
 

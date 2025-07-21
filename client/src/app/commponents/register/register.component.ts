@@ -28,6 +28,7 @@ export class RegisterComponent {
   //#region Fg
   registerFg = this._fB.group({
     emailCtrl: ['', [Validators.required, Validators.maxLength(50), Validators.email]],
+    userNameCtrl: ['', [Validators.required, Validators.maxLength(50)]], 
     passwordCtrl: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]],
     confirmPasswordCtrl: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]]
   })
@@ -36,8 +37,8 @@ export class RegisterComponent {
     return this.registerFg.get('emailCtrl') as FormControl;
   }
 
-  get Usernamectrl(): FormControl {
-    return this.Usernamectrl.get('UsernameCtrl') as FormControl;
+  get UserNamectrl(): FormControl {
+    return this.registerFg.get('userNameCtrl') as FormControl;
   }
 
   get PasswordCtrl(): FormControl {
@@ -52,7 +53,7 @@ export class RegisterComponent {
   register(): void {
     let userInput: AppUser = {
       email: this.EmailCtrl.value,
-      username: this.Usernamectrl.value,
+      username: this.UserNamectrl.value,
       password: this.PasswordCtrl.value,
       confirmPassword: this.ConfirmPasswordCtrl.value
     }

@@ -9,8 +9,9 @@ public record AppUser(
     string? Id,
     [EmailAddress, MaxLength(50)]
     string Email,
-    [Length(8, 16)]
+    [MaxLength(50)]
     string username,
+    [Length(8, 16)]
     string Password,
     string ConfirmPassword
 );
