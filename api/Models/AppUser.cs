@@ -10,6 +10,7 @@ public record AppUser(
     [EmailAddress, MaxLength(50)]
     string Email,
     [Length(8, 16)]
+    string username,
     string Password,
     string ConfirmPassword
 );

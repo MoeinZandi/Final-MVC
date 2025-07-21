@@ -1,3 +1,7 @@
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+using api.Settings;
+
 var builder = WebApplication.CreateBuilder(args);
 #region MongoDbSettings
 ///// get values from this file: appsettings.Development.json /////
