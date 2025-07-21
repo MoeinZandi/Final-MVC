@@ -1,0 +1,25 @@
+<div>
+    <form>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" [formControl]="EmailCtrl" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" [formControl]="PasswordCtrl" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" [formControl]="ConfirmPasswordCtrl" matInput>
+        </mat-form-field>
+
+        <button (click)="update()" mat-flat-button color="parimary"
+            [disabled]="updateFg.invalid">
+            Update
+        </button>
+
+        <p>{{userResponse?.email}}</p>
+    </form>
+</div>

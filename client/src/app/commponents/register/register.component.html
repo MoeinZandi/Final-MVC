@@ -1,0 +1,59 @@
+<div class="item-1">
+    <form>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" [formControl]="EmailCtrl" matInput>
+            @if (EmailCtrl.hasError("required")) {
+            <mat-error>This field required.</mat-error>
+            }
+            @else if (EmailCtrl.hasError("email")) {
+            <mat-error>Enter valid email</mat-error>
+            }
+            @else if(EmailCtrl.hasError("mixlength")) {
+            <mat-error>Max 50 characters.</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" [formControl]="PasswordCtrl" matInput>
+            @if (PasswordCtrl.hasError("required")) {
+            <mat-error>This field is required.</mat-error>
+            }
+            @else if (PasswordCtrl.hasError("minlength")) {
+            <mat-error>Min 8 characters.</mat-error>
+            }
+            @else if (PasswordCtrl.hasError("maxlength")) {
+            <mat-error>Max 16 characters.</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" [formControl]="ConfirmPasswordCtrl" matInput>
+            @if (ConfirmPasswordCtrl.hasError("required")) {
+            <mat-error>This field is required.</mat-error>
+            }
+            @else if (ConfirmPasswordCtrl.hasError("minlength")) {
+            <mat-error>Min 8 characters.</mat-error>
+            }
+            @else if (ConfirmPasswordCtrl.hasError("maxlength")) {
+            <mat-error>Max 16 characters.</mat-error>
+            }
+        </mat-form-field>
+
+        <button (click)="register()" mat-flat-button color="parimary" [disabled]="registerFg.invalid">
+            Register
+        </button>
+
+        <p>
+            {{userResponse?.email}}
+            {{userResponse?.password}}
+            {{userResponse?.confirmPassword}}
+        </p>
+
+        <h1>
+            {{error}}
+        </h1>
+    </form>
+</div>

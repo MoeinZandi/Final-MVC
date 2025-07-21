@@ -1,0 +1,24 @@
+<div class="container">
+    <form>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" [formControl]="EmailCtrl" matInput>
+        </mat-form-field>
+
+        <button (click)="getByEmail()" mat-flat-button color="parimary">Get By Email</button>
+    </form>
+
+    <p>
+        {{userRes?.email}}
+        {{userRes?.password}}
+        {{userRes?.confirmPassword}}
+    </p>
+
+    <button (click)="getAll()" mat-flat-button color="parimary">
+        Get All
+    </button>
+
+    @for (user of users; track $index) {
+    <h1>{{user.email}}</h1>
+    }
+</div>
