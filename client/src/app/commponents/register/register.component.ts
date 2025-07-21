@@ -10,9 +10,11 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink,
+  imports: [
+    RouterLink,
     MatFormFieldModule, MatButtonModule, MatInputModule,
-    FormsModule, ReactiveFormsModule,],
+    FormsModule, ReactiveFormsModule
+  ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
