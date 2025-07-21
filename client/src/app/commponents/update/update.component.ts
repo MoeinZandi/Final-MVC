@@ -58,7 +58,7 @@ export class UpdateComponent {
     }
 
     this._http.put<AppUser>
-      ('http://localhost:5000/api/user/update-by-id/6874ce40da630f9bcf1a5bfe', userInput).subscribe({
+      ('http://localhost:5000/api/user/update-by-id/', userInput).subscribe({
         next: (res) => {
           console.log(res);
           this.userResponse = res;

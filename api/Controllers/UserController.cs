@@ -1,12 +1,13 @@
-using api.Models;
 using api.Settings;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using api.Models;
 
 namespace api.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class UserController : ControllerBase
 {
     #region Mongodb
@@ -87,3 +88,4 @@ public class UserController : ControllerBase
         return _collection.DeleteOne(doc => doc.Id == userId);
     }
 }
+
