@@ -1,8 +1,8 @@
+using api.Models;
 using api.Settings;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using api.Models;
 
 namespace api.Controllers;
 
@@ -10,6 +10,7 @@ namespace api.Controllers;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
+   
     #region Mongodb
     private readonly IMongoCollection<AppUser> _collection;
 
@@ -88,4 +89,3 @@ public class UserController : ControllerBase
         return _collection.DeleteOne(doc => doc.Id == userId);
     }
 }
-
